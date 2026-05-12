@@ -1,74 +1,489 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Drialdi Islami - Resume</title>
-    <style>
-        body {
-            font-family: Arial;
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-            background: #f4f4f4;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Drialdi Islami - IT Specialist Resume</title>
 
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        h1 {
-            color: #333;
-        }
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-        h2 {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-        }
-    </style>
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#0f172a;
+      color:#e2e8f0;
+      line-height:1.7;
+    }
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:40px 20px;
+    }
+
+    .resume{
+      display:grid;
+      grid-template-columns:320px 1fr;
+      background:#111827;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    /* LEFT SIDE */
+
+    .sidebar{
+      background:linear-gradient(180deg,#1e293b,#0f172a);
+      padding:40px 30px;
+      border-right:1px solid rgba(255,255,255,0.08);
+    }
+
+    .profile{
+      text-align:center;
+      margin-bottom:40px;
+    }
+
+    .profile img{
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      object-fit:cover;
+      border:4px solid #3b82f6;
+      margin-bottom:20px;
+    }
+
+    .profile h1{
+      font-size:28px;
+      font-weight:700;
+      color:#ffffff;
+    }
+
+    .profile p{
+      color:#93c5fd;
+      font-size:15px;
+      margin-top:5px;
+    }
+
+    .section-title{
+      font-size:18px;
+      font-weight:600;
+      margin-bottom:20px;
+      color:#60a5fa;
+      border-bottom:2px solid #3b82f6;
+      padding-bottom:8px;
+    }
+
+    .contact-item,
+    .skill-item,
+    .cert-item,
+    .app-item{
+      margin-bottom:14px;
+      font-size:14px;
+      color:#cbd5e1;
+    }
+
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .skill-badge{
+      background:#1e40af;
+      color:white;
+      padding:8px 12px;
+      border-radius:30px;
+      font-size:13px;
+      transition:0.3s;
+    }
+
+    .skill-badge:hover{
+      background:#2563eb;
+      transform:translateY(-2px);
+    }
+
+    .cert-list,
+    .app-list{
+      list-style:none;
+    }
+
+    .cert-list li,
+    .app-list li{
+      margin-bottom:12px;
+      font-size:14px;
+      color:#dbeafe;
+    }
+
+    /* RIGHT SIDE */
+
+    .content{
+      padding:50px;
+    }
+
+    .hero{
+      margin-bottom:40px;
+    }
+
+    .hero h2{
+      font-size:40px;
+      color:#ffffff;
+      margin-bottom:10px;
+    }
+
+    .hero span{
+      color:#60a5fa;
+    }
+
+    .summary{
+      font-size:16px;
+      color:#cbd5e1;
+      margin-top:15px;
+    }
+
+    .content-section{
+      margin-bottom:50px;
+    }
+
+    .job{
+      margin-bottom:35px;
+      padding-bottom:25px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .job:last-child{
+      border-bottom:none;
+    }
+
+    .job-header{
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:10px;
+    }
+
+    .job-title{
+      font-size:22px;
+      font-weight:600;
+      color:#ffffff;
+    }
+
+    .job-company{
+      color:#60a5fa;
+      font-weight:500;
+    }
+
+    .job-date{
+      color:#94a3b8;
+      font-size:14px;
+    }
+
+    .job ul{
+      margin-left:20px;
+      margin-top:10px;
+    }
+
+    .job ul li{
+      margin-bottom:10px;
+      color:#d1d5db;
+    }
+
+    .education-box{
+      background:#1e293b;
+      padding:20px;
+      border-radius:15px;
+      margin-bottom:20px;
+      border-left:5px solid #3b82f6;
+    }
+
+    .education-box h4{
+      color:#ffffff;
+      margin-bottom:8px;
+    }
+
+    .education-box p{
+      color:#cbd5e1;
+    }
+
+    .footer{
+      text-align:center;
+      padding-top:30px;
+      color:#64748b;
+      font-size:14px;
+    }
+
+    @media(max-width:950px){
+      .resume{
+        grid-template-columns:1fr;
+      }
+
+      .sidebar{
+        border-right:none;
+        border-bottom:1px solid rgba(255,255,255,0.08);
+      }
+
+      .content{
+        padding:35px 25px;
+      }
+
+      .hero h2{
+        font-size:32px;
+      }
+    }
+
+    @media(max-width:600px){
+      .job-header{
+        flex-direction:column;
+      }
+
+      .hero h2{
+        font-size:28px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="card">
-    <h1>Drialdi Islami</h1>
-    <p>IT Specialist | Networking | Cybersecurity</p>
-</div>
+<div class="container">
+  <div class="resume">
 
-<div class="card">
-    <h2>About Me</h2>
-    <p>
-        Experienced IT Specialist with networking and cybersecurity background.
-    </p>
-</div>
+    <!-- LEFT SIDE -->
+    <aside class="sidebar">
 
-<div class="card">
-    <h2>Experience</h2>
-    <ul>
-        <li>BALFIN Group / SPAR Albania - IT Specialist</li>
-    </ul>
-</div>
+      <div class="profile">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile Photo">
+        <h1>Drialdi Islami</h1>
+        <p>IT Specialist | Network & Cybersecurity</p>
+      </div>
 
-<div class="card">
-    <h2>Education</h2>
-    <ul>
-        <li>MSc Network & Cybersecurity</li>
-        <li>Bachelor Computer Engineering</li>
-    </ul>
-</div>
+      <div class="sidebar-section">
+        <h3 class="section-title">Contact</h3>
 
-<div class="card">
-    <h2>Certifications</h2>
-    <ul>
-        <li>CCNA</li>
-        <li>Fortinet Certified Associate</li>
-    </ul>
-</div>
+        <div class="contact-item">📍 Milwaukee, Wisconsin</div>
+        <div class="contact-item">📧 drialdiislami@outlook.com</div>
+        <div class="contact-item">📱 -Null- </div>
+        <div class="contact-item">🌐 github.com/drialdi-1</div>
+      </div>
 
-<div class="card">
-    <h2>Contact</h2>
-    <p>Email: your@email.com</p>
-    <p>LinkedIn: linkedin.com/in/yourprofile</p>
+      <br>
+
+      <div class="sidebar-section">
+        <h3 class="section-title">Skills</h3>
+
+        <div class="skills">
+          <div class="skill-badge">Network Administration</div>
+          <div class="skill-badge">Cybersecurity</div>
+          <div class="skill-badge">Windows Server</div>
+          <div class="skill-badge">FortiGate</div>
+          <div class="skill-badge">Cisco</div>
+          <div class="skill-badge">MikroTik</div>
+          <div class="skill-badge">VPN/IPsec</div>
+          <div class="skill-badge">VLANs</div>
+          <div class="skill-badge">LibreNMS</div>
+          <div class="skill-badge">PowerShell</div>
+          <div class="skill-badge">Virtualization</div>
+          <div class="skill-badge">Datacenter Support</div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="sidebar-section">
+        <h3 class="section-title">Certifications</h3>
+
+        <ul class="cert-list">
+          <li>✔ Cisco AI Technical Practitioner</li>
+          <li>✔ CyberOps Associate</li>
+          <li>✔ Cisco NETSEC</li>
+          <li>✔ CCNA</li>
+          <li>✔ ENSA</li>
+          <li>✔ SRWE</li>
+          <li>✔ ITN</li>
+          <li>✔ Fortinet Certified Associate</li>
+          <li>✔ FortiGate 7.4 Operator</li>
+        </ul>
+      </div>
+
+      <br>
+
+      <div class="sidebar-section">
+        <h3 class="section-title">Applications</h3>
+
+        <ul class="app-list">
+          <li>Winbox / Putty / Tera Term</li>
+          <li>LibreNMS / Zabbix</li>
+          <li>AnyDesk / TeamViewer / SSH</li>
+          <li>Hyper-V / Proxmox / VirtualBox</li>
+          <li>UrBackup / Veeam</li>
+          <li>Lansweeper / Jira</li>
+          <li>SSMS</li>
+          <li>PowerShell / Batch</li>
+          <li>FortiGate / OPNsense</li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- RIGHT SIDE -->
+    <main class="content">
+
+      <section class="hero">
+        <h2>Hello, I'm <span>Drialdi</span></h2>
+
+        <p class="summary">
+          Detail-oriented IT Specialist with strong knowledge in network administration,
+          system support, and cybersecurity. Experienced supporting enterprise infrastructure,
+          Microsoft AI datacenter operations, and multi-site IT environments.
+        </p>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="content-section">
+        <h3 class="section-title">Work Experience</h3>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">Datacenter Technician Level 3</div>
+              <div class="job-company">TEKsystems</div>
+            </div>
+
+            <div class="job-date">
+              Nov 2025 - Apr 2026
+            </div>
+          </div>
+
+          <ul>
+            <li>Supported operations at Microsoft Milwaukee AI Datacenter (MKE3, MKE4).</li>
+            <li>Performed Level 1, 2 and 3 datacenter tasks.</li>
+            <li>Installed, cabled and troubleshot servers and switches.</li>
+            <li>Worked with Nvidia GB200 / GB300 GPU deployments.</li>
+            <li>Handled hardware replacements, optics swaps and break-fix operations.</li>
+            <li>Ensured compliance with safety and datacenter standards.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">IT Specialist</div>
+              <div class="job-company">SPAR Albania</div>
+            </div>
+
+            <div class="job-date">
+              May 2023 - Nov 2025
+            </div>
+          </div>
+
+          <ul>
+            <li>Supported infrastructure across 80+ remote sites and datacenters.</li>
+            <li>Configured FortiGate, Cisco and MikroTik networking devices.</li>
+            <li>Managed VLANs and enterprise Wi-Fi deployments.</li>
+            <li>Monitored systems using LibreNMS and SNMP.</li>
+            <li>Provided end-user and server support.</li>
+            <li>Maintained backup and disaster recovery operations.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">IT Repair Technician</div>
+              <div class="job-company">Nesimi Phone</div>
+            </div>
+
+            <div class="job-date">
+              Aug 2016 - May 2023
+            </div>
+          </div>
+
+          <ul>
+            <li>Diagnosed and repaired smartphones, laptops and PCs.</li>
+            <li>Performed hardware upgrades and replacements.</li>
+            <li>Handled OS installations and software troubleshooting.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">IT Repair Technician</div>
+              <div class="job-company">InfiniTech Albania</div>
+            </div>
+
+            <div class="job-date">
+              Aug 2016 - Oct 2016
+            </div>
+          </div>
+
+          <ul>
+            <li>Provided repair services for desktops, laptops, tablets and phones.</li>
+            <li>Resolved connectivity and performance issues.</li>
+            <li>Installed and configured operating systems and applications.</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- FREELANCE -->
+      <section class="content-section">
+        <h3 class="section-title">Freelance / Projects</h3>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">Freelance Network Support</div>
+              <div class="job-company">Simplify Networks (UK) – AECOM Milwaukee</div>
+            </div>
+
+            <div class="job-date">
+              Feb 2025
+            </div>
+          </div>
+
+          <ul>
+            <li>Upgraded Cisco Catalyst 2960-XR switches to Catalyst 9300X.</li>
+            <li>Implemented ring topology and dual PSU redundancy.</li>
+            <li>Performed rack cleanup and cable restructuring.</li>
+            <li>Tracked hardware inventory and validated connectivity.</li>
+            <li>Collaborated with InfoSys Ltd for deployment success.</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="content-section">
+        <h3 class="section-title">Education</h3>
+
+        <div class="education-box">
+          <h4>Canadian Institute of Technology (CIT)</h4>
+          <p>Master of Science in Network & Cybersecurity</p>
+          <p>Graduated: 2023</p>
+        </div>
+
+        <div class="education-box">
+          <h4>University of Metropolitan Tirana (UMT)</h4>
+          <p>Bachelor of Science in Computer Engineering</p>
+          <p>Graduated: 2019</p>
+        </div>
+      </section>
+
+      <div class="footer">
+        © 2026 Drialdi Islami - IT Specialist Portfolio & Resume
+      </div>
+
+    </main>
+
+  </div>
 </div>
 
 </body>
