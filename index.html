@@ -195,22 +195,30 @@
       color:#d1d5db;
     }
 
-    .education-box{
-      background:#1e293b;
-      padding:20px;
-      border-radius:15px;
-      margin-bottom:20px;
-      border-left:5px solid #3b82f6;
-    }
+.education-container{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
 
-    .education-box h4{
-      color:#ffffff;
-      margin-bottom:8px;
-    }
+.education-box{
+  flex:1;
+  min-width:280px;
+  background:#1e293b;
+  padding:20px;
+  border-radius:15px;
+  margin-bottom:20px;
+  border-left:5px solid #3b82f6;
+}
 
-    .education-box p{
-      color:#cbd5e1;
-    }
+.education-box h4{
+  color:#ffffff;
+  margin-bottom:8px;
+}
+
+.education-box p{
+  color:#cbd5e1;
+}
 
     .footer{
       text-align:center;
@@ -466,21 +474,25 @@
       </section>
 
       <!-- EDUCATION -->
-      <section class="content-section">
-        <h3 class="section-title">Education</h3>
+<section class="content-section">
+  <h3 class="section-title">Education</h3>
 
-        <div class="education-box">
-          <h4>Canadian Institute of Technology (CIT)</h4>
-          <p><u>Master of Science:</u><strong> Network & Cybersecurity</strong></p>
-          <p>Graduated: 2023</p>
-        </div>
+  <div class="education-container">
 
-        <div class="education-box">
-          <h4>University of Metropolitan Tirana (UMT)</h4>
-          <p><u>Bachelor of Science</u><strong> Computer Engineering</strong></p>
-          <p>Graduated: 2019</p>
-        </div>
-      </section>
+    <div class="education-box">
+      <h4>Canadian Institute of Technology (CIT)</h4>
+      <p><u>Master of Science:</u> <strong>Network & Cybersecurity</strong></p>
+      <p>Graduated: 2023</p>
+    </div>
+
+    <div class="education-box">
+      <h4>University of Metropolitan Tirana (UMT)</h4>
+      <p><u>Bachelor of Science:</u> <strong>Computer Engineering</strong></p>
+      <p>Graduated: 2019</p>
+    </div>
+
+  </div>
+</section>
 
       <div class="footer">
         © 2026 Drialdi Islami - IT Specialist Portfolio & Resume
